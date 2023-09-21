@@ -25,7 +25,6 @@ public class TipCalculator {
             totalCost += num;
         }
 
-        System.out.println(foodItems);
-
+        System.out.println("New line");
     }
 }
