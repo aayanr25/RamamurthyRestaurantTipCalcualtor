@@ -10,21 +10,25 @@ public class TipCalculator {
         System.out.print("What percentage are you tipping? (0-100) ");
         double tipPercentage = scan.nextInt();
         tipPercentage /= 100;
+        scan.nextLine();
 
         double totalCost = 0;
         double num = 0;
         ArrayList<String> foodItems  = new ArrayList<String>();
-        while (num != -1) {
-            System.out.print("Enter one food item you ordered: " );
-            String item = scan.nextLine();
+        String item = "";
+        while (item != "-1") {
+            System.out.print("Enter one food item you ordered (-1 to end): " );
+            item = scan.nextLine();
             foodItems.add(item);
-            System.out.println();
             System.out.print("Enter a cost in dollars and cents (e.g. 12.50): ");
             num = scan.nextDouble();
+            scan.nextLine();
+            System.out.println();
 
             totalCost += num;
         }
+        System.out.println(foodItems);
+        System.out.println(totalCost);
 
-        System.out.println("New line");
     }
 }
