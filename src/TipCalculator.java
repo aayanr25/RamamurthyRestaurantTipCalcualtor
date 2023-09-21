@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -14,17 +15,20 @@ public class TipCalculator {
 
         double totalCost = 0;
         double num = 0;
+        int temp = 0;
         ArrayList<String> foodItems  = new ArrayList<String>();
         String item = "";
-        while (item != "-1") {
+        while (temp == 0) {
             System.out.print("Enter one food item you ordered (-1 to end): " );
             item = scan.nextLine();
+            if (item == "-1") {
+                break;
+            }
             foodItems.add(item);
             System.out.print("Enter a cost in dollars and cents (e.g. 12.50): ");
             num = scan.nextDouble();
             scan.nextLine();
             System.out.println();
-
             totalCost += num;
         }
         System.out.println(foodItems);
