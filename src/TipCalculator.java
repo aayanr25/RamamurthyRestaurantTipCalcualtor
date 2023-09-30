@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TipCalculator {
+    // This method makes it easy to round to two decimals later in the program.
     public static double roundNum(double num) {
         double temp = num * 100;
         temp = Math.round(temp);
@@ -17,7 +18,7 @@ public class TipCalculator {
         int tipPercentage = 0;
         String tipType;
         while (true) {
-            System.out.println("Do you want to tip as a percentage or set value? (1) Percentage (2) Set Value: ");
+            System.out.print("Do you want to tip as a percentage or set value? (1) Percentage (2) Set Value: ");
             int choice = scan.nextInt();
             if (choice == 1) {
                 tipType = "Percentage";
@@ -39,9 +40,10 @@ public class TipCalculator {
         double subtotal = 0;
         double num;
         int numItems = 0;
-        ArrayList<String> foodItems  = new ArrayList<>();
+        ArrayList<String> foodItems  = new ArrayList<>(); // this array contains the strings of the food items ordered.
         String item = "";
         while (!item.equals("-1")) {
+            // I have the user input their item before the cost, but they still enter -1 to end.
             System.out.print("Enter one food item you ordered (-1 to end): " );
             item = scan.nextLine();
             if (item.equals("-1")) {
@@ -55,7 +57,7 @@ public class TipCalculator {
             subtotal += num;
             numItems ++;
         }
-
+        // this if statement is used to identify if the user chose a tip percentage or set tip value.
         if (totalTip == 0) {
             realTipPercent = (double) tipPercentage / 100;
             totalTip = realTipPercent * subtotal;
@@ -75,10 +77,11 @@ public class TipCalculator {
         System.out.println("Per person cost before tip: $" + roundNum(perPersonBeforeTip) );
         System.out.println("Tip per person: $" + roundNum(tipPerPerson));
         System.out.println("Total cost per person: $" + roundNum((perPersonBeforeTip + tipPerPerson)));
-
         System.out.println("--------------------");
+
         int i = 0;
         System.out.println("Items ordered: ");
+        // this loop lists each item ordered.
         while (i < numItems) {
             System.out.println(foodItems.get(i));
             i ++;

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43cc69a3-7cda-4c9e-9689-efb0fc834c41" name="Changes" comment="completed all requirements other than freestyle.">
+    <list default="true" id="43cc69a3-7cda-4c9e-9689-efb0fc834c41" name="Changes" comment="final project completed with freestyle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TipCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TipCalculator.java" afterDir="false" />
     </list>
@@ -101,7 +101,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696101690971</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="final project completed with freestyle">
+      <option name="closed" value="true" />
+      <created>1696107150234</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696107150234</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -111,6 +119,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="added temp variable, new if statement to break while loop" />
     <MESSAGE value="completed all requirements other than freestyle." />
-    <option name="LAST_COMMIT_MESSAGE" value="completed all requirements other than freestyle." />
+    <MESSAGE value="final project completed with freestyle" />
+    <option name="LAST_COMMIT_MESSAGE" value="final project completed with freestyle" />
   </component>
 </project>
