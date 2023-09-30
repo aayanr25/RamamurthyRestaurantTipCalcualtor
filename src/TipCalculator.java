@@ -1,4 +1,3 @@
-import java.util.Objects;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -13,15 +12,34 @@ public class TipCalculator {
         System.out.println("Welcome to the tip calculator, where you'll never have to calculate a tip again!");
         System.out.print("How many people are in your group? ");
         int numPeople = scan.nextInt();
-        System.out.print("What percentage are you tipping? (0-100) ");
-        int tipPercentage = scan.nextInt();
-        double realTip = (double) tipPercentage / 100;
+        double totalTip = 0;
+        double realTipPercent = 0.0;
+        int tipPercentage = 0;
+        String tipType;
+        while (true) {
+            System.out.println("Do you want to tip as a percentage or set value? (1) Percentage (2) Set Value: ");
+            int choice = scan.nextInt();
+            if (choice == 1) {
+                tipType = "Percentage";
+                System.out.print("What percentage are you tipping? (0-100) ");
+                tipPercentage = scan.nextInt();
+                break;
+            } else if (choice == 2) {
+                tipType = "Set Value";
+                System.out.print("How much do you want to tip? Enter a cost in dollars and cents (e.g. 12.50): ");
+                totalTip = scan.nextDouble();
+                break;
+            } else {
+                System.out.println("Please enter either a 1 or a 2.");
+            }
+        }
+
         scan.nextLine();
 
         double subtotal = 0;
-        double num = 0;
+        double num;
         int numItems = 0;
-        ArrayList<String> foodItems  = new ArrayList<String>();
+        ArrayList<String> foodItems  = new ArrayList<>();
         String item = "";
         while (!item.equals("-1")) {
             System.out.print("Enter one food item you ordered (-1 to end): " );
@@ -37,13 +55,21 @@ public class TipCalculator {
             subtotal += num;
             numItems ++;
         }
-        double totalTip = realTip * subtotal;
+
+        if (totalTip == 0) {
+            realTipPercent = (double) tipPercentage / 100;
+            totalTip = realTipPercent * subtotal;
+        }
         double perPersonBeforeTip = (subtotal / numPeople);
         double tipPerPerson = (totalTip / numPeople);
 
         System.out.println("--------------------");
         System.out.println("Total before tip: $" + roundNum(subtotal));
-        System.out.println("Total percentage: " + tipPercentage + "%");
+        if (tipType.equals("Percentage")) {
+            System.out.println("Total percentage: " + tipPercentage + "%");
+        } else {
+            System.out.println("Customer chose to tip a set amount.");
+        }
         System.out.println("Total tip: $" + roundNum(totalTip));
         System.out.println("Total bill with tip: $" + roundNum((totalTip + subtotal)));
         System.out.println("Per person cost before tip: $" + roundNum(perPersonBeforeTip) );
@@ -57,8 +83,6 @@ public class TipCalculator {
             System.out.println(foodItems.get(i));
             i ++;
         }
-
-
 
     }
 }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43cc69a3-7cda-4c9e-9689-efb0fc834c41" name="Changes" comment="added temp variable, new if statement to break while loop">
+    <list default="true" id="43cc69a3-7cda-4c9e-9689-efb0fc834c41" name="Changes" comment="completed all requirements other than freestyle.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TipCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TipCalculator.java" afterDir="false" />
     </list>
@@ -93,7 +93,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696096021018</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="completed all requirements other than freestyle.">
+      <option name="closed" value="true" />
+      <created>1696101690971</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696101690971</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -102,6 +110,7 @@
     <MESSAGE value="initialized array list, but scanning the string isn't working." />
     <MESSAGE value="test" />
     <MESSAGE value="added temp variable, new if statement to break while loop" />
-    <option name="LAST_COMMIT_MESSAGE" value="added temp variable, new if statement to break while loop" />
+    <MESSAGE value="completed all requirements other than freestyle." />
+    <option name="LAST_COMMIT_MESSAGE" value="completed all requirements other than freestyle." />
   </component>
 </project>
