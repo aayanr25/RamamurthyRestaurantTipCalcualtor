@@ -3,25 +3,30 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class TipCalculator {
+    public static double roundNum(double num) {
+        double temp = num * 100;
+        temp = Math.round(temp);
+        return temp / 100;
+    }
     public static void main (String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to the tip calculator, where you'll never have to calculate a tip again!");
         System.out.print("How many people are in your group? ");
         int numPeople = scan.nextInt();
         System.out.print("What percentage are you tipping? (0-100) ");
-        double tipPercentage = scan.nextInt();
-        tipPercentage /= 100;
+        int tipPercentage = scan.nextInt();
+        double realTip = (double) tipPercentage / 100;
         scan.nextLine();
 
-        double totalCost = 0;
+        double subtotal = 0;
         double num = 0;
-        int temp = 0;
+        int numItems = 0;
         ArrayList<String> foodItems  = new ArrayList<String>();
         String item = "";
-        while (temp == 0) {
+        while (!item.equals("-1")) {
             System.out.print("Enter one food item you ordered (-1 to end): " );
             item = scan.nextLine();
-            if (item == "-1") {
+            if (item.equals("-1")) {
                 break;
             }
             foodItems.add(item);
@@ -29,10 +34,31 @@ public class TipCalculator {
             num = scan.nextDouble();
             scan.nextLine();
             System.out.println();
-            totalCost += num;
+            subtotal += num;
+            numItems ++;
         }
-        System.out.println(foodItems);
-        System.out.println(totalCost);
+        double totalTip = realTip * subtotal;
+        double perPersonBeforeTip = (subtotal / numPeople);
+        double tipPerPerson = (totalTip / numPeople);
+
+        System.out.println("--------------------");
+        System.out.println("Total before tip: $" + roundNum(subtotal));
+        System.out.println("Total percentage: " + tipPercentage + "%");
+        System.out.println("Total tip: $" + roundNum(totalTip));
+        System.out.println("Total bill with tip: $" + roundNum((totalTip + subtotal)));
+        System.out.println("Per person cost before tip: $" + roundNum(perPersonBeforeTip) );
+        System.out.println("Tip per person: $" + roundNum(tipPerPerson));
+        System.out.println("Total cost per person: $" + roundNum((perPersonBeforeTip + tipPerPerson)));
+
+        System.out.println("--------------------");
+        int i = 0;
+        System.out.println("Items ordered: ");
+        while (i < numItems) {
+            System.out.println(foodItems.get(i));
+            i ++;
+        }
+
+
 
     }
 }
